@@ -16,3 +16,9 @@
   font-family: roboto-bold;
   src: url("../assets/fonts/roboto/Roboto-Bold.ttf");
 }
+
+* {
+  font-family: roboto-regular;
+  font-size: 24px;
+  color: #101010;
+}
