@@ -21,7 +21,7 @@ export default function Button({
   const [border, setBorder] = useState("");
   useEffect(() => {
     if (isSelectedBorder === "yes") {
-      setBorder("outline outline-[4px] outline-[#ff0000]");
+      setBorder("outline outline-[2px] outline-[#ff0000]");
     }
   }, []);
 
@@ -29,15 +29,16 @@ export default function Button({
     <>
       <button
         className={
-          "inline-flex justify-center w-[181px] h-[60px] py-[14px] px-[38px] rounded-[20px] drop-shadow-[0px_5px_4px_#00000040] " +
+          "inline-flex justify-center w-[92px] md:w-[181px] h-[60px] " +
+          "rounded-[20px] drop-shadow-[0px_5px_4px_#00000040] place-items-center " +
+          "bg-[#27285C] " +
           border
         }
         type={type}
         onClick={onclick}
-        style={{ backgroundColor: "#27285C" }}
       >
-        <Image src={icon} alt="icon" height={32} width={32} />
-        <div style={{ color: "#E7E7E7", paddingLeft: "8px" }}>
+        <Image src={icon} alt="icon" className="w-[32px] h-[32px]" />
+        <div className="text-[#E7E7E7] ps-[8px] hidden md:block">
           {text ? text : ""}
         </div>
       </button>
