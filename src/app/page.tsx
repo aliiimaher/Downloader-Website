@@ -13,7 +13,7 @@ export default function Home() {
           <h1>
             <div style={{ fontFamily: "pacifico" }}>this is main page...</div>
             <Button icon={HomeIcon} text="Home" isSelectedBorder="yes" />
-            <Input placeHolder="bashe" />
+            <Input btnType="youtube" placeHolder="bashe" />
           </h1>
         </main>
         <Footer />
