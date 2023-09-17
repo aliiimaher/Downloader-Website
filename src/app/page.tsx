@@ -13,7 +13,7 @@ export default function Home() {
       <div
         className={
           "flex w-full flex-col items-start justify-center " +
-          "p-[20px] md:p-[225px]"
+          "p-[20px] pb-0 md:px-[225px] md:pt-[4px]"
         }
       >
         <div className="flex flex-row justify-between w-full">
