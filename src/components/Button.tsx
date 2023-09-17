@@ -29,7 +29,9 @@ export default function Button({
     <>
       <button
         className={
-          "inline-flex justify-center w-[92px] md:w-[181px] h-[60px] rounded-[20px] drop-shadow-[0px_5px_4px_#00000040] place-items-center bg-[#27285C] " +
+          "inline-flex justify-center w-[92px] md:w-[181px] h-[60px] " +
+          "rounded-[20px] drop-shadow-[0px_5px_4px_#00000040] place-items-center " +
+          "bg-[#27285C] " +
           border
         }
         type={type}
