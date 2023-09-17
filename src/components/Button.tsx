@@ -21,7 +21,7 @@ export default function Button({
   const [border, setBorder] = useState("");
   useEffect(() => {
     if (isSelectedBorder === "yes") {
-      setBorder("outline outline-[4px] outline-[#ff0000]");
+      setBorder("outline outline-[2px] outline-[#ff0000]");
     }
   }, []);
 
