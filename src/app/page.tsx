@@ -18,8 +18,8 @@ export default function Home() {
       <div className="flex w-full justify-center place-items-center">
         <div
           className={
-            "flex w-full flex-col items-start justify-center place-items-center " +
-            "p-[20px] pb-0 md:px-0 md:pt-[4px] max-w-[990px]"
+            "flex flex-col items-start justify-center place-items-center " +
+            "p-[20px] pb-0 md:px-0 md:pt-[4px] max-w-[360px] md:max-w-[990px]"
           }
         >
           <div className="flex flex-row justify-between w-full">

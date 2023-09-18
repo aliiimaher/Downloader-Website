@@ -1,8 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+import logoImageHeader from "../../public/icon.png";
+import Head from "next/head";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Debb Downloader",
@@ -16,8 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <link rel="icon" type="image/svg+xml" href="icon.png" />
-      <body className={inter.className}>{children}</body>
+      <Head>
+        <Image src={logoImageHeader} alt="logo" />
+      </Head>
+      <body>{children}</body>
     </html>
   );
 }
