@@ -72,13 +72,13 @@ export default function Instagram() {
             >
               Video
             </div>
-            <video className="w-full mb-[40px] inline" controls>
+            <video className="w-full mb-[40px] inline" autoPlay loop controls>
               <source
-                src="../../../assets/videos/Rec0001.mp4"
+                src="/videos/video6.mp4"
                 type="video/mp4"
                 onError={(e) => console.error("Error loading video", e)}
-                className=""
               />
+              Sorry, your browser does not support the video tag.
             </video>
           </div>
         </div>
