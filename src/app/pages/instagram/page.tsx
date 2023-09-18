@@ -3,11 +3,11 @@
 import Button from "@/components/Button";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Input from "@/components/Input";
 
 import YoutubeSvg from "../../../assets/icons/youtube.svg";
 import HomeSvg from "../../../assets/icons/home.svg";
 import InstagramSvg from "../../../assets/icons/insta.svg";
-import Input from "@/components/Input";
 
 export default function Instagram() {
   return (
@@ -71,8 +71,15 @@ export default function Instagram() {
               }
             >
               Video
-              <video src="..." className="w-full mb-[40px]" />
             </div>
+            <video className="w-full mb-[40px] inline" controls>
+              <source
+                src="../../../assets/videos/Rec0001.mp4"
+                type="video/mp4"
+                onError={(e) => console.error("Error loading video", e)}
+                className=""
+              />
+            </video>
           </div>
         </div>
       </div>
