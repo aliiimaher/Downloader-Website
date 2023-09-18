@@ -74,7 +74,7 @@ export default function Instagram() {
             </div>
             <video className="w-full mb-[40px] inline" autoPlay loop controls>
               <source
-                src="/videos/video6.mp4"
+                src="/videos/videoTest.mp4"
                 type="video/mp4"
                 onError={(e) => console.error("Error loading video", e)}
               />
