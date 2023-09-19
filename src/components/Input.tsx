@@ -42,6 +42,7 @@ export default function Input({
             "justify-center w-[65px] md:w-[181px] " +
             btnColor
           }
+          type="submit"
         >
           <Image
             src={ShortGoArrowSvg}
