@@ -9,7 +9,22 @@ import YoutubeSvg from "../../../assets/icons/youtube.svg";
 import HomeSvg from "../../../assets/icons/home.svg";
 import InstagramSvg from "../../../assets/icons/insta.svg";
 
+import { useForm, SubmitHandler } from "react-hook-form";
+import { data } from "autoprefixer";
+
+type Inputs = {
+  downloadLink: string;
+};
+
 export default function Instagram() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+
   return (
     <>
       <Header />
@@ -47,7 +62,16 @@ export default function Instagram() {
             Debb YouTube Downloader
           </h1>
           <div className="flex w-full justify-center md:mb-[40px]">
-            <Input placeHolder="Enter the link" btnType="youtube" />
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <Input
+                placeHolder="Enter the link"
+                btnType="youtube"
+                reactHookForm={register("downloadLink", { required: true })}
+              />
+              {errors.downloadLink && (
+                <span className="text-[#FF0000]">This field is required!</span>
+              )}
+            </form>
           </div>
           <p className="mt-[40px] mb-[24px] md:text-[24px] md:mt-0">
             How to download?
