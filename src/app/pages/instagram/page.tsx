@@ -72,7 +72,7 @@ export default function Instagram() {
             >
               Video
             </div>
-            <video className="w-full mb-[40px] inline" autoPlay loop controls>
+            <video className="w-full mb-[40px] inline" controls>
               <source
                 src="/videos/videoTest.mp4"
                 type="video/mp4"
