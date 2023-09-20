@@ -10,6 +10,7 @@ import HomeSvg from "../../../assets/icons/home.svg";
 import InstagramSvg from "../../../assets/icons/insta.svg";
 
 import { useForm, SubmitHandler } from "react-hook-form";
+import { data } from "autoprefixer";
 
 type Inputs = {
   downloadLink: string;
@@ -39,6 +40,7 @@ export default function Instagram() {
               icon={YoutubeSvg}
               text="YouTube"
               onclick={() => (location.href = "/pages/youtube")}
+              isSelectedBorder="yes"
             />
             <Button
               icon={HomeSvg}
@@ -49,7 +51,6 @@ export default function Instagram() {
               icon={InstagramSvg}
               text="Instagram"
               onclick={() => (location.href = "/pages/instagram")}
-              isSelectedBorder="yes"
             />
           </div>
           <h1
@@ -58,13 +59,13 @@ export default function Instagram() {
               "text-center mt-[40px] mb-[20px]"
             }
           >
-            Debb Instagram Downloader
+            Debb YouTube Downloader
           </h1>
           <div className="flex w-full justify-center md:mb-[40px]">
             <form onSubmit={handleSubmit(onSubmit)}>
               <Input
                 placeHolder="Enter the link"
-                btnType="instagram"
+                btnType="youtube"
                 reactHookForm={register("downloadLink", { required: true })}
               />
               {errors.downloadLink && (
@@ -76,9 +77,9 @@ export default function Instagram() {
             How to download?
             <br />
             <br />
-            First of all, in the Instagram copy the link of the selected post or
-            story. Then past that in the above search box. And, at the end click
-            the arrow. Done :)
+            First of all, in the YouTube copy the link of the selected video.
+            Then past that in the above search box. And, at the end click the
+            arrow. Done :)
             <br />
             <br />
             Don’t worry if you don’t understand. I’ve prepared a short video in

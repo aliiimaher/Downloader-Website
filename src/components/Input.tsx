@@ -9,9 +9,14 @@ import { useEffect, useState } from "react";
 interface Props {
   placeHolder: string;
   btnType: "instagram" | "youtube";
+  reactHookForm?: any;
 }
 
-export default function Input({ placeHolder, btnType = "instagram" }: Props) {
+export default function Input({
+  placeHolder,
+  btnType = "instagram",
+  reactHookForm,
+}: Props) {
   const [btnColor, setColorBtn] = useState("bg-[#7941CA]");
   useEffect(() => {
     if (btnType === "youtube") {
@@ -29,6 +34,7 @@ export default function Input({ placeHolder, btnType = "instagram" }: Props) {
             "h-[56px] ps-[10px] lg:ps-[32px] text-[#E7E7E7] place-items-center"
           }
           color="rgba(231, 231, 231, 1)"
+          {...reactHookForm}
         />
         <button
           className={
@@ -36,6 +42,7 @@ export default function Input({ placeHolder, btnType = "instagram" }: Props) {
             "justify-center w-[65px] md:w-[181px] " +
             btnColor
           }
+          type="submit"
         >
           <Image
             src={ShortGoArrowSvg}
