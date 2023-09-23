@@ -9,8 +9,9 @@ import YoutubeSvg from "../../../assets/icons/youtube.svg";
 import HomeSvg from "../../../assets/icons/home.svg";
 import InstagramSvg from "../../../assets/icons/insta.svg";
 
-import { useForm, SubmitHandler } from "react-hook-form";
-import { data } from "autoprefixer";
+import { useForm } from "react-hook-form";
+
+import axios from "axios";
 
 type Inputs = {
   downloadLink: string;
@@ -23,7 +24,24 @@ export default function Instagram() {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const handleDownload = async (data: Inputs) => {
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:5000/download-youtube",
+        { url: data.downloadLink },
+        { responseType: "blob" }
+      );
+
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "video.mp4");
+      document.body.appendChild(link);
+      link.click();
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
@@ -62,7 +80,7 @@ export default function Instagram() {
             Debb YouTube Downloader
           </h1>
           <div className="flex w-full justify-center md:mb-[40px]">
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(handleDownload)}>
               <Input
                 placeHolder="Enter the link"
                 btnType="youtube"
